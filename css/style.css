@@ -1,16 +1,130 @@
+:root {
+    --header-font:"Pacifico", cursive;
+    --main-font:"Righteous", sans-serif;
+    --header-bg-color:rgb(254,194,96);
+    --page-bg-color:rgb(247,236,222);
+    --title-gardient:linear-gradient(to right, #3ca55c, #b5ac49);
+    --btn-bg-color:rgb(209,81,45);
+    --btn-bg-hover-color:rgb(157, 57, 29);
+    --visit-btn-bg-color:rgb(158,178,59);
+    --delete-btn-bg-color:rgb(235,29,54);
+    --dark:black;
+    --light:white;
+    --green:rgb(158,178,59);
+    --red:rgb(235,29,54);
+    --greenHover:rgb(130, 149, 34);
+    --redHover:rgb(211, 15, 15); 
+}
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-.btn-mid-blue {
-    background-color: midnightblue;
-    transform: .5s;
-    padding: 20px;
+
+body {
+    background-color: var(--page-bg-color);
 }
 
-.btn-mid-blue:hover {
-    background-color: green;
+a {
+    text-decoration: none;
+    color: var(--light);
 }
 
+.w-90 {
+    width: 90%;
+}
+
+.btn-orange {
+    background-color: var(--btn-bg-color);
+    color: var(--light);
+    transition: .5s;
+    padding: 10px 50px;
+}
+
+.btn-orange:hover {
+    background-color: var(--btn-bg-hover-color);
+    color: var(--light);
+}
+
+.btn-green   {
+    background-color: var(--green);
+    color: var(--light);
+    transition: .5s;
+}
+
+
+ .btn-red {
+    background-color: var(--red);
+    color: var(--light);
+    transition: .5s;
+ }
+
+.btn-green:hover {
+    background-color: var(--greenHover);
+    color: var(--light);
+}
+
+ .btn-red:hover {
+    background-color: var(--redHover);
+    color: var(--light);
+ }
+
+
+/* section title style */
+
+h1 {
+    font-family: var(--header-font);
+    position: relative;   
+    width: fit-content;    
+    font-size: 2.5rem;
+}
+
+section.title {
+    border-bottom: 2px dotted var(--dark);   
+    padding-bottom: 80px;
+}
+
+h1::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width:100%;
+    height: 40%;
+    background-color: var(--header-bg-color);
+    z-index: -10;
+    transition: .5s;
+} 
+
+h1:hover::after {
+    height: 70%;
+}
+
+/* section form style */
+
+section.form {
+    border-bottom: 2px dotted var(--dark);   
+    /* padding-bottom: 80px; */
+}
+
+section.form form h2 {
+    background:var(--title-gardient);  
+    background-clip: text;    
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-family: var(--main-font);
+}
+
+
+.form-control {
+    --bs-border-color:lightgray;
+    
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem var(--header-bg-color);
+}
+
+/* section table style */

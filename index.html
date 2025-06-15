@@ -3,30 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quote of the Day</title>
+    <title>Bookmark</title>
+    <!-- icon link -->
+    <link rel="icon" href="imgs/bookmark-svgrepo-com.svg"/>
+    <!-- font links -->
+       <!-- Pacifico link -->       
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+       <!-- Righteous link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pacifico&family=Righteous&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <!-- font awsome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- style links -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
+    <main class="container mt-5">
+        <section class="title mt-4  d-flex justify-content-center">
+            <h1 class="fw-light ">Bookmarker</h1>
+        </section>
+        <section class="form my-5  d-flex justify-content-center">
+            <form class=" w-100" id="form">
+                <h2 class="fs-5  text-center mb-5 ">
+                    <span>
+                        <i class="fa-solid fa-bookmark"></i>
+                    </span>
+                    Bookmark your favorite sites
+                    <span>
+                        <i class="fa-solid fa-bookmark"></i>
+                    </span>
+                </h2>
 
-    <main class="container-fluid mt-5">
-        <div class="title text-center">
-            <h1 class="display-1 fw-bold">Quote Of The Day</h1>            
-        </div>
+                <div class="input mt-3   d-flex flex-column justify-content-center align-items-start">
+                    <label class="w-100 form-label">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                        Site Name
+                    </label>
+                    <input oninput="markValidation(this , regaxes.nameRegax)" onblur="returnBtn()" class="w-100  form-control" placeholder="Bookmark Name" id="markName"/>
+                </div>
 
-        <div class="description mt-5 d-flex flex-column justify-content-center align-items-center">
-            <p>
-                Press The Button Below To Reieve A Random Quote
-            </p>
+                <div class="input mt-3  d-flex flex-column justify-content-center align-items-start">
+                    <label class="w-100 form-label">
+                        <i class="fa-solid fa-link"></i>
+                        Site URL
+                    </label>
+                    <input oninput="markValidation(this , regaxes.urlRegax)" onblur="returnBtn()" class="w-100 form-control" placeholder="Website Url" id="markUrl"/>
+                </div>
 
-            <button class="btn btn-mid-blue text-light" onclick="displayQuote()">New Quote</button>
+                <div class="submit-btn w-100 d-flex justify-content-center my-3">
+                    <button onclick="createMark()" type="button" class="btn btn-orange" id="submitBtn" >
+                        Submit
+                    </button>
+                </div>
+                
 
-            <div class="quote-cont mt-5 d-flex justify-content-center" id="quoteCont" >
+            </form>
+        </section>
+        <section class="table">
+            <table class="table-light w-100 " >
+                <thead>
+                    <tr class="text-capitalize text-center">
+                        <th class="py-2">index</th>
+                        <th>Website Name</th>
+                        <th>Visit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
 
-            </div>
-        </div>
+                <tbody id="marksContainer">
+
+                </tbody>
+               
+                
+            </table>
+        </section>
     </main>
+    
+
+
+
+    <!-- js scripts -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
