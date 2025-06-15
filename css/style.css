@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.btn-mid-blue {
+    background-color: midnightblue;
+    transform: .5s;
+    padding: 20px;
+}
+
+.btn-mid-blue:hover {
+    background-color: green;
+}
+

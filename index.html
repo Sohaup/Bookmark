@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+
+    <main class="container-fluid mt-5">
+        <div class="title text-center">
+            <h1 class="display-1 fw-bold">Quote Of The Day</h1>            
+        </div>
+
+        <div class="description mt-5 d-flex flex-column justify-content-center align-items-center">
+            <p>
+                Press The Button Below To Reieve A Random Quote
+            </p>
+
+            <button class="btn btn-mid-blue text-light" onclick="displayQuote()">New Quote</button>
+
+            <div class="quote-cont mt-5 d-flex justify-content-center" id="quoteCont" >
+
+            </div>
+        </div>
+    </main>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
